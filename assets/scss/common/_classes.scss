@@ -1,0 +1,68 @@
+@use "../presets" as *;
+@use "../mixins" as *;
+
+.btn {
+  border-width: 2px;
+  border-style: solid;
+  padding: 0.5em 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  letter-spacing: 0.1em;
+  transition: background-color 0.5s;
+
+  &:hover,
+  &:focus {
+    background-color: $color-accent;
+  }
+}
+
+.btn--light {
+  background-color: rgba($color-white, 0.1);
+  border-color: $color-white;
+
+  @include lg-min {
+    min-width: 250px;
+    height: $gap-x3;
+    font-size: 1.125rem;
+  }
+
+  @include lg-md {
+    min-width: 200px;
+    height: 50px;
+  }
+
+  @include md {
+    min-width: 170px;
+    height: $gap-x2;
+  }
+}
+
+.btn--primary {
+  min-height: $gap-x3;
+  background-color: rgba($color-primary, 0.8);
+  border-color: $color-primary;
+  font-size: 1.125rem;
+
+  @include sm-min {
+    width: 350px;
+  }
+
+  @include sm {
+    width: 100%;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: $gap-sm;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
