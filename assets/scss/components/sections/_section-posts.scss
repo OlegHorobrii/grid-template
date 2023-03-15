@@ -2,51 +2,46 @@
 @use "../../mixins" as *;
 
 .posts {
-  h2 {
-    margin-top: 0;
-  }
-
   @include lg-min {
     padding-top: $gap-x5;
     padding-bottom: $gap-x5;
   }
-
   @include lg-md {
     padding-top: $gap-x4;
     padding-bottom: $gap-x4;
   }
-
   @include md {
     padding-top: $gap-x3;
     padding-bottom: $gap-x3;
   }
+  h2 {
+    margin-top: 0;
+  }
 
   &__container {
     display: grid;
-    @extend %containerm;
 
+    @extend %containerm;
   }
 
   &__grid {
     display: grid;
-    padding-bottom: $gap;
-    gap: $gap;
 
+    padding-bottom: $gap;
+
+    gap: $gap;
     @include lg-min {
       grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
       grid-template-columns: repeat(4, 1fr);
     }
-
     @include lg-md {
       grid-template-areas: "p1 p1 p2" "p3 p4 p4" "p5 p5 p6";
       grid-template-columns: repeat(3, 1fr);
     }
-
     @include md-sm {
       grid-template-areas: "p1 p2" "p3 p4" "p5 p6";
       grid-template-columns: 1fr 1fr;
     }
-
     @include md {
       grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6";
     }
@@ -60,6 +55,7 @@
 
 .post-item {
   transition: background-color 0.5s;
+
   background-color: $color-post;
 
 
@@ -67,19 +63,24 @@
     display: flex;
     overflow: hidden;
     justify-content: center;
+
     background-color: $color-primary;
 
     img {
-      transition: transform 0.5s;
-      object-fit: cover;
       width: 100%;
+
+      transition: transform 0.5s;
+
+      object-fit: cover;
     }
   }
 
   &__link {
     display: grid;
     overflow: hidden;
+
     height: 100%;
+
     grid-template-rows: 300px 1fr;
 
     &:hover .post-item {
@@ -103,14 +104,17 @@
   &__caption {
     display: grid;
     align-content: center;
+
     padding: $gap;
 
     h3 {
-      font-family: $font-header;
-      letter-spacing: 0.05em;
-      color: $color-gray;
-      font-size: 1.125rem;
       text-align: center;
+      letter-spacing: 0.05em;
+
+      color: $color-gray;
+
+      font-family: $font-header;
+      font-size: 1.125rem;
     }
 
     p {

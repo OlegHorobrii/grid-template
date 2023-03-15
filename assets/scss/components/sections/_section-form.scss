@@ -3,18 +3,19 @@
 
 .form {
   display: block;
+
   padding: $gap-lg 0;
+
   background-color: $color-primary;
 
   &__container {
     display: grid;
-    gap: $gap;
-    @extend %containerm;
 
+    @extend %containerm;
+    gap: $gap;
     @include md-min {
       grid-template-columns: repeat(3, 1fr);
     }
-
     @include md-sm {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -23,6 +24,7 @@
 
   .btn--primary {
     width: 100%;
+
     color: $color-white;
     border-color: rgba($color-white, 0);
     border-bottom-color: rgba($color-white, 0.2);
@@ -32,24 +34,29 @@
   .btn--primary:hover,
   .btn--primary:focus {
     height: $gap-x3;
-    background-color: $color-accent;
+
     border: 2px solid $color-white;
+    background-color: $color-accent;
   }
 
 
   .form-item {
     &__input {
       display: block;
+
       width: 100%;
       height: $gap-x3;
       padding-right: $gap-lg;
       padding-left: $gap-lg;
+
       transition: background-color 0.5s, border-color 0.5s;
       letter-spacing: 0.15em;
+
       color: $color-white;
       border: 2px solid rgba($color-white, 0);
       border-bottom-color: rgba($color-white, 0.25);
       background-color: rgba($color-white, 0.05);
+
       font-size: 1.125rem;
       line-height: 39px;
     }
@@ -60,9 +67,9 @@
 
     &__input:hover,
     &__input:focus {
-      outline: none;
       border-color: rgba($color-white, 0.15);
       border-bottom-color: $color-white;
+      outline: none;
       background-color: rgba($color-white, 0.15);
     }
   }
